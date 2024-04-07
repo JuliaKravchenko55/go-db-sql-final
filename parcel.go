@@ -35,8 +35,6 @@ func (s ParcelStore) Add(p Parcel) (int, error) {
 	return int(lastId), nil
 }
 
-// верните идентификатор последней добавленной записи
-
 func (s ParcelStore) Get(number int) (Parcel, error) {
 	// реализуйте чтение строки по заданному number
 	row := s.db.QueryRow("SELECT number, client, status, address, created_at FROM parcel WHERE number = :number",
